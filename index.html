@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app" class="app-container">
+        <!-- Screens will be injected/toggled here -->
         <section id="screen-splash" class="active">
             <div class="glass-card-center">
                 <h1 class="glitch-text" data-text="IQ-TRIVIA">IQ-TRIVIA</h1>
@@ -28,7 +29,6 @@
                     <span class="value">---</span>
                 </div>
             </div>
-
             <div class="menu-options">
                 <button class="btn-pro gold" onclick="selectMode('solo')">
                     <span class="btn-icon">⚔️</span>
@@ -37,7 +37,6 @@
                         <span class="desc">Cucerește Europa (900 Nivele)</span>
                     </div>
                 </button>
-
                 <button class="btn-pro cyan" onclick="selectMode('duo')">
                     <span class="btn-icon">⚡</span>
                     <div class="btn-content">
@@ -45,7 +44,6 @@
                         <span class="desc">Duel Online & Bots</span>
                     </div>
                 </button>
-
                 <button class="btn-pro silver" onclick="selectMode('iq_test')">
                     <span class="btn-icon">🧠</span>
                     <div class="btn-content">
@@ -54,13 +52,34 @@
                     </div>
                 </button>
             </div>
+        </section>
 
-            <div class="leaderboard-preview">
-                <h3 class="section-title">TOP 10 SOVEREIGNS</h3>
-                <div id="leaderboard-list"></div>
+        <!-- Battle Screen -->
+        <section id="screen-battle">
+            <div class="battle-header">
+                <div class="player-v-player">
+                    <div class="p1">ADRYAN <div class="p-bar"><div id="p1-fill"></div></div></div>
+                    <div class="vs">VS</div>
+                    <div class="p2">OPPONENT <div class="p-bar"><div id="p2-fill"></div></div></div>
+                </div>
+            </div>
+            <div id="battle-question-area" class="glass-card">
+                <p id="q-text">Căutăm oponent...</p>
+                <div id="ans-grid"></div>
             </div>
         </section>
+
+        <!-- IQ Test Screen -->
+        <section id="screen-iq">
+            <div class="test-progress"><span id="test-current">1</span>/33</div>
+            <div id="iq-canvas-area"></div>
+            <div class="matrix-options" id="matrix-grid"></div>
+        </section>
     </div>
+    <script src="brain_data.js"></script>
+    <script src="engine_solo.js"></script>
+    <script src="engine_duo.js"></script>
+    <script src="iq_test.js"></script>
     <script src="logic.js"></script>
 </body>
 </html>
