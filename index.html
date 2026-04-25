@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>IQ-Trivia | Sovereign Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div id="app" class="app-container">
+        <section id="screen-splash" class="active">
+            <div class="glass-card-center">
+                <h1 class="glitch-text" data-text="IQ-TRIVIA">IQ-TRIVIA</h1>
+                <div class="loader-bar"><div class="loader-progress"></div></div>
+                <p class="status-text">INITIALIZING SOVEREIGN ENGINE...</p>
+            </div>
+        </section>
+
+        <section id="screen-menu">
+            <div class="top-bar">
+                <div class="user-profile">
+                    <div class="avatar-ring"></div>
+                    <span class="username">ADRYAN</span>
+                </div>
+                <div class="iq-score">
+                    <span class="label">CURRENT IQ</span>
+                    <span class="value">---</span>
+                </div>
+            </div>
+
+            <div class="menu-options">
+                <button class="btn-pro gold" onclick="selectMode('solo')">
+                    <span class="btn-icon">⚔️</span>
+                    <div class="btn-content">
+                        <span class="title">SOLO OFFLINE</span>
+                        <span class="desc">Cucerește Europa (900 Nivele)</span>
+                    </div>
+                </button>
+
+                <button class="btn-pro cyan" onclick="selectMode('duo')">
+                    <span class="btn-icon">⚡</span>
+                    <div class="btn-content">
+                        <span class="title">DUO BATTLE</span>
+                        <span class="desc">Duel Online & Bots</span>
+                    </div>
+                </button>
+
+                <button class="btn-pro silver" onclick="selectMode('iq_test')">
+                    <span class="btn-icon">🧠</span>
+                    <div class="btn-content">
+                        <span class="title">IQ TEST</span>
+                        <span class="desc">Algoritm de Analiză 33-Matrix</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="leaderboard-preview">
+                <h3 class="section-title">TOP 10 SOVEREIGNS</h3>
+                <div id="leaderboard-list"></div>
+            </div>
+        </section>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>
